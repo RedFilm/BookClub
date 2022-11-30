@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Genre>
+
+@{
+
+}
+
+<div class="main-img">
+    <span class="title">Book genres</span>
+</div>
+
+<div class="container">
+    <ul>
+        @foreach (var genre in Model)
+        {
+            <li> 
+                <a href="#">
+                    @genre.Name
+                </a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,20 @@
+﻿@model RegisterViewModel
+
+
+<h1>Wellcome</h1>
+
+<div id="wrapper">
+
+	<form id="signin" asp-controller="Auth" asp-action="Register">
+		<input asp-for="UserName" placeholder="Username" />
+		<input asp-for="Email"  placeholder="Email" />
+
+		<input asp-for="Password"  placeholder="Password" />
+		<input asp-for="ConfirmPassword"  placeholder="Confirm password"/>
+
+		<button type="submit">&#xf0da;</button>
+
+		<p>Already have an account? <a asp-controller="Auth" asp-action="Login">Click here</a></p>
+	</form>
+
+</div>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookClub</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BookClub.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+
+            <a asp-controller="Lib" asp-action="Index">My library</a>
+
+            <a asp-controller="Home" asp-action="Genries">Genres</a>
+
+            <a asp-controller="Panel" asp-action="Index">Admin panel</a>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Auth" asp-action="Logout">Logout</a>
+            }
+            else
+            {
+                <a asp-controller="Auth" asp-action="Login">Sign In</a>
+            }
+            <a asp-controller="Auth" asp-action="Register">Register</a>
+        </nav>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>

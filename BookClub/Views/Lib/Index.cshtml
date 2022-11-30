@@ -1,0 +1,37 @@
+﻿@model AppUser
+
+@{
+
+}
+
+<div class="main-img">
+
+    @if (Model.Books.Count == 0)
+    {
+        <span class="title">Your library is empty</span>
+    }
+    else
+    {
+        <span class="title">Here are your books:</span>
+    }
+
+</div>
+    
+<div class="container">
+
+    <ul>
+        @foreach (var book in Model.Books)
+        {
+            <li> 
+                <a asp-controller="Home" asp-action="Book" asp-route-id="@book.Id">
+                <img src="/Image/@book.Image" width="300">
+                </a>
+
+                <form asp-controller="Lib" asp-action="RemoveBook" asp-route-id="@book.Id">
+                    <button>Remove from my library</button>
+                </form>
+            </li>
+        }
+    </ul>
+    
+</div>

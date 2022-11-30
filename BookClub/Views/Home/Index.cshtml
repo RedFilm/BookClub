@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Book>
+
+@{
+
+}
+
+<div class="main-img">
+    <span class="title">Find and add books to own web-library</span>
+</div>
+
+<div class="container">
+    <ul>
+        @foreach (var book in Model)
+        {
+            <li> 
+                <a asp-controller="Home" asp-action="Book" asp-route-id="@book.Id">
+                   <img src="/Image/@book.Image" width="300">
+                </a>
+            </li>
+        }
+    </ul>
+</div>

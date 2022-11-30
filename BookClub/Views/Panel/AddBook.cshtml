@@ -1,0 +1,51 @@
+﻿@model BookViewModel
+
+@{
+    
+}
+
+<div id="wrapper">
+    <form id="addbook" asp-controller="Panel" asp-action="AddBook" method="post" enctype="multipart/form-data">
+        <input asp-for="Title" placeholder="Title" required/>
+
+        <input asp-for="Author" placeholder="Author" required/>
+
+        <input asp-for="PublishHouse" placeholder="Publish house" required/>
+
+        <input asp-for="PublishYear" placeholder="Publish year" required/>
+
+        <input asp-for="Description" placeholder="Description"/>
+
+        <input asp-for="Tags" placeholder="Tags"/>
+
+        <select asp-for="Genre.Id">
+            @foreach (var genre in Model.Genries)
+            {
+                <option value="@genre.Id">@genre.Name</option>
+            }
+        </select>
+
+        <input asp-for="Image" id="input__file" class="input__file" />
+        <label for="input__file">
+            <span class="input__file-button-text">
+                Add an image
+            </span>
+        </label>
+
+        <input type="submit" value="Add" />
+    </form>
+
+</div>
+
+
+<script>
+    let inputs = document.querySelectorAll('.input__file');
+    Array.prototype.forEach.call(inputs, function (input) {
+
+        let label = input.nextElementSibling;
+        input.addEventListener('change', function (e) {
+            let selectedFile = e.target.files[0].name;
+            label.querySelector('.input__file-button-text').innerText = 'Выбран файл: ' + selectedFile;
+        });
+    });
+</script>

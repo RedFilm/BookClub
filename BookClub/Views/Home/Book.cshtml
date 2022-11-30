@@ -1,0 +1,21 @@
+﻿@model BookViewModel
+
+
+<div class="container">
+
+    @{
+        var img_path = $"/Image/{Model.CurrentImage}";
+    }
+
+    <img src="@img_path" width="200">
+
+    <div>
+        <h4 class="card-title">@Model.Title</h4>
+        <h5 class="card-title">@Model.Author</h5>
+
+        <p class="card-text">@Model.Description</p>
+        
+        <a class="btn btn-primary" asp-controller="Lib" asp-action="AddBook" asp-route-id="@Model.Id">Add to library</a>
+     </div>
+
+</div>

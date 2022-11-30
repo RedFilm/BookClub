@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Book>
+
+@{
+    
+}
+
+<div class="main-img">
+    <span class="title">Find and add books to own web-library</span>
+</div>
+
+<div class="container">
+
+    <ul>
+        <a style="color:cornflowerblue" asp-action="AddBook" asp-controller="Panel">Add new book</a>
+
+        @foreach (var book in Model)
+        {
+           <li style="color:white"> 
+               @book.Title
+                -
+               <a style="color:cornflowerblue" asp-controller="Panel" asp-action="EditBook" asp-route-id="@book.Id">
+                   Edit
+               </a>
+                -
+               <a style="color:cornflowerblue" asp-controller="Panel" asp-action="RemoveBook" asp-route-id="@book.Id">
+                   Remove
+               </a>
+           </li>
+        }
+    </ul>
+</div>

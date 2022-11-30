@@ -1,0 +1,16 @@
+﻿@model LoginViewModel
+
+<h1>Sign in</h1>
+
+<div id="wrapper">
+
+	<form asp-controller="Auth" asp-action="Login" id="signin">
+
+		<input asp-for="Email" placeholder="Email" />
+		<input asp-for="Password" placeholder="Password" />
+		<button type="submit">&#xf0da;</button>
+
+		<p>Forgot your password? <a href="#">Click here</a></p>
+	</form>
+
+</div>
