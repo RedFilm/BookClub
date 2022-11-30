@@ -15,9 +15,9 @@ The project is a book club with simple functionality:
 💾 Technologies
 During the development the project, I had time to work with some technologies:
 
-C#
-Asp.net core
-MSSQLServer
-Entity Framework
+* C#
+* Asp.net core
+* MSSQLServer
+* Entity Framework
 
 Thank you for reviewing the project!
